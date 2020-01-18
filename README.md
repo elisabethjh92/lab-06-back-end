@@ -9,3 +9,5 @@ Start time: 2:00pm
 Finish time: 2:25pm
 
 Actual time needed to complete: 25 minutes
+
+Madison was Navigator and Kai was driver.
