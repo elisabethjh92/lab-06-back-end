@@ -61,3 +61,16 @@ Finish time: 4:53pm
 Actual time needed to complete: 1 hour, 23 minutes
 
 Kai was Navigator and Madison was driver
+
+### Feature 4
+Number and name of feature: Feature 4: Error
+
+Estimate of time needed to complete: 30 minutes
+
+Start time: 2:30pm
+
+Finish time: 2:40pm
+
+Actual time needed to complete: 10 minutes
+
+Kai was Navigator and Madison was driver
