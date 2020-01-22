@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const superagent = require('superagent');
 
 const PORT = process.env.PORT;
 const app = express();
@@ -14,17 +15,41 @@ app.get('/', (request, response) => {
 });
 
 // Location Route
-app.get('/location', (request, response) => {
-  try {
-    const geoData = require('./data/geo.json');
-    const city = request.query.city;
-    const locationData = new Location (city, geoData);
-    response.send(locationData);
+// app.get('/location', (request, response) => {
+//   try {
+//     const geoData = require('./data/geo.json');
+//     const city = request.query.city;
+//     const locationData = new Location (city, geoData);
+//     response.send(locationData);
+//   }
+//   catch(error) {
+//     errorHandler('So sorry, something went wrong.', request, response);
+//   }
+// });
+app.get('/location', locationHandler);
+app.get('/weather', weatherHandler);
+
+//Location Handler Function
+function locationHandler(request, response){
+  try{
+    let city city = request.query.city;
+    let key = process.env.GEOCODE_API_KEY;
+    const url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json&limit=1`;
+
+    superagent.get(url)
+    .then(data => {
+      const geoData = data.body[0];
+      const location = new Location(city, geoData);
+      response.sent(location);
+    })
+    catch(() => {
+      errorHandler('location superagent broke', request, response);
+    });
   }
-  catch(error) {
-    errorHandler('So sorry, something went wrong.', request, response);
+  catch(error){
+    errorHandler(error, request, response);
   }
-});
+}
 
 // Location Constructor
 function Location(city, geoData){
