@@ -60,27 +60,27 @@ function Location(city, geoData){
 }
 
 // Weather Route
-app.get('/weather', (request, response) => {
-  try {
-    const forecast = require('./data/darksky.json');
-    const weatherData = [];
-    for (let i = 0; i < forecast.daily.data.length; i++){
-      let dailyForecast = forecast.daily.data[i];
-      weatherData.push(new Weather(dailyForecast.summary, dailyForecast.time));
-    }
-    response.send(weatherData);
-  }
-  catch(error) {
-    errorHandler('So sorry, something went wrong.', request, response);
-  }
-});
+// app.get('/weather', (request, response) => {
+//   try {
+//     const forecast = require('./data/darksky.json');
+//     const weatherData = [];
+//     for (let i = 0; i < forecast.daily.data.length; i++){
+//       let dailyForecast = forecast.daily.data[i];
+//       weatherData.push(new Weather(dailyForecast.summary, dailyForecast.time));
+//     }
+//     response.send(weatherData);
+//   }
+//   catch(error) {
+//     errorHandler('So sorry, something went wrong.', request, response);
+//   }
+// });
 
-// Weather Constructor
-function Weather(forecast, time){
-  this.forecast = forecast;
-  this.time = new Date(time*1000);
-  console.log(this.time);
-}
+// // Weather Constructor
+// function Weather(forecast, time){
+//   this.forecast = forecast;
+//   this.time = new Date(time*1000);
+//   console.log(this.time);
+// }
 
 // Error Handler
 function errorHandler(error, request, response) {
