@@ -33,13 +33,18 @@ app.get('/location', locationHandler);
 function locationHandler(request, response){
   try{
     let city = request.query.city;
+    //console.log('city', request.query, city);
     let key = process.env.GEOCODE_API_KEY;
     const url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json&limit=1`;
+    //console.log('hi', url);
 
     superagent.get(url)
       .then(data => {
+        //console.log(data.body[0]);
         const geoData = data.body[0];
+        console.log('city and geoData', city, geoData);
         const location = new Location(city, geoData);
+        console.log('location', location);
         response.send(location);
       })
       .catch(() => {
@@ -54,9 +59,9 @@ function locationHandler(request, response){
 // Location Constructor
 function Location(city, geoData){
   this.search_query = city;
-  this.formatted_query = geoData[0].display_name;
-  this.latitude = geoData[0].lat;
-  this.longitude = geoData[0].lon;
+  this.formatted_query = geoData.display_name;
+  this.latitude = geoData.lat;
+  this.longitude = geoData.lon;
 }
 
 // Weather Route
