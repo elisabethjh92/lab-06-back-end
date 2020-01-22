@@ -27,24 +27,24 @@ app.get('/', (request, response) => {
 //   }
 // });
 app.get('/location', locationHandler);
-app.get('/weather', weatherHandler);
+//app.get('/weather', weatherHandler);
 
 //Location Handler Function
 function locationHandler(request, response){
   try{
-    let city city = request.query.city;
+    let city = request.query.city;
     let key = process.env.GEOCODE_API_KEY;
     const url = `https://us1.locationiq.com/v1/search.php?key=${key}&q=${city}&format=json&limit=1`;
 
     superagent.get(url)
-    .then(data => {
-      const geoData = data.body[0];
-      const location = new Location(city, geoData);
-      response.sent(location);
-    })
-    catch(() => {
-      errorHandler('location superagent broke', request, response);
-    });
+      .then(data => {
+        const geoData = data.body[0];
+        const location = new Location(city, geoData);
+        response.send(location);
+      })
+      .catch(() => {
+        errorHandler('location superagent broke', request, response);
+      });
   }
   catch(error){
     errorHandler(error, request, response);
