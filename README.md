@@ -1,76 +1,71 @@
 # City Explorer Back-End
 
-**Author**: Kai Hansen & Madison Stehle
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Kai Hansen & Randee Orion
+**Version**: 1.0.2 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+With City Explorer: one can find all sorts of good things about a city they wish to make an inquiry on.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+One must link to the proper APIs and either use the starter code or cry and drink a lot of alcohol as they create the CSS.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Languages: HTML, CSS, JS,
+Libraries: JSon, JQuery, Handlebars
+API- DarkSky, Eventful, LocationIQ
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
-
-## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+1.0.2 - map and weather are now dynamically generated on demand and are no longer hard coded in 
 
 ## Feature Progess
 
 ### Feature 1
 Number and name of feature: 1. Repository Set Up
 
-Estimate of time needed to complete: 45 minutes
+Estimate of time needed to complete: 20 minutes
 
-Start time: 2:00pm
+Start time: 6:30
 
-Finish time: 2:25pm
+Finish time: 6:45pm
 
-Actual time needed to complete: 25 minutes
+Actual time needed to complete: 15 minutes
 
-Madison was Navigator and Kai was driver.
+Kai drove while Randee navigated.
 
 ### Feature 2
-Number and name of feature: Feature 2: Locations
+Number and name of feature: Feature 2: Location
 
-Estimate of time needed to complete: 1.5 hours
+Estimate of time needed to complete: 1 hours
 
-Start time: 2:30pm
+Start time: 6:45pm
 
-Finish time: 3:19pm
+Finish time: 9:15pm
 
-Actual time needed to complete: 49 mins
+Actual time needed to complete: 2.5 hours
 
-Madison was Navigator and Kai was driver
+Kai drove and Randee navigated. 
 
 ### Feature 3
 Number and name of feature: Feature 3: Weather
 
 Estimate of time needed to complete: 1.5 hours
 
-Start time: 3:30pm
+Start time: 6:30pm
 
-Finish time: 4:53pm
+Finish time: 7:15pm
 
-Actual time needed to complete: 1 hour, 23 minutes
+Actual time needed to complete: 45 minutes
 
-Kai was Navigator and Madison was driver
+Randee was the driver and Kai was the navigator 
 
 ### Feature 4
-Number and name of feature: Feature 4: Error
+Number and name of feature: Feature 4: Events
 
-Estimate of time needed to complete: 30 minutes
+Estimate of time needed to complete: 
 
-Start time: 2:30pm
+Start time:
 
-Finish time: 2:40pm
+Finish time: 
 
-Actual time needed to complete: 10 minutes
+Actual time needed to complete: 
 
-Kai was Navigator and Madison was driver
